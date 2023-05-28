@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+}
+body{
+    background-color: antiquewhite;
+}
+
+/* navbar start */
+nav{
+    display: flex;
+    background: #000;
+    color: aliceblue;
+    list-style: none;
+    height: 50px;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 1vw;
+}
+nav ul li{
+    display: flex;
+    align-items: center;
+    padding: 0px 1vw;
+}
+.brand{
+    padding: 0.5vw;
+}
+.brand img{
+    height: 30px;
+}
+
+/* navbar ends here  */
+
+/* progress baR STQART hone ja raha h  */
+.bottom{
+    display: flex;
+    flex-direction: column;
+    background: #000;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+.control{
+    display: flex;
+    background: white;
+    height: 50px;
+    width: 100px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.prev{
+    background: blue;
+    height: 20px;
+    width: 20px;
+    margin: 2px;
+}
+.play{
+    background: green;
+    height: 20px;
+    width: 20px;
+    margin: 2px;
+}
+.next{
+    background: blue;
+    height: 20px;
+    width: 20px;
+    margin: 2px;
+}
+
+#progreeBar{
+    width: 80vw;
+    padding: 1vw;
+}
+
+
+/* end the work of progress baar  */
+
+/* beech ka kaam start honerer ja raha h  */
+
+.container{
+    margin: auto;
+    background: pink;
+    width: 80vw;
+    height: 70vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    border-radius: 10px;
+}
