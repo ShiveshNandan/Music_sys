@@ -97,3 +97,18 @@ nav ul li{
     margin-bottom: 1vw;
     border-radius: 10px;
 }
+
+.songBanner{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.songItem{
+    padding: 0.3vw;
+    background: red;
+    width: 20vw;
+    margin: 0.5vw;
+}
