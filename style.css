@@ -50,7 +50,7 @@ nav ul li{
     display: flex;
     background: white;
     height: 50px;
-    width: 100px;
+    width: 150px;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -79,7 +79,11 @@ nav ul li{
     width: 80vw;
     padding: 1vw;
 }
-
+#mbutton{
+    height: 20px;
+    width: 20px;
+    background: white;
+}
 
 /* end the work of progress baar  */
 

@@ -6,6 +6,7 @@ let songIndex = 0;
 let audioElement = new Audio('songs/0.mp3');
 let masterPlay = document.getElementById('masterPlay');
 let progreeBar = document.getElementById('progreeBar');
+let volumeBar = document.getElementById('volumeBar');
 let songItems = Array.from(document.getElementsByClassName("songItem"));
 let songInfo = document.getElementById("songinfo");
 console.log(songIndex);
@@ -46,6 +47,26 @@ masterPlay.addEventListener('click', () => {
 
     }
 })
+
+document.addEventListener("keypress", function (event) {
+    auio(event.key);
+})
+
+function auio(key) {
+    if (key == " " && audioElement.paused) {
+        audioElement.play();
+        masterPlay.style.background = "black";
+    } else if (key == " " && audioElement.played) {
+        audioElement.pause();
+        masterPlay.style.background = "green";
+    }
+    // console.log("i am clicked");
+}
+
+
+
+
+
 // listen to events 
 audioElement.addEventListener('timeupdate', () => {
     progress = parseInt((audioElement.currentTime / audioElement.duration) * 100000000)
@@ -112,3 +133,30 @@ document.getElementById('next').addEventListener('click', () => {
     songInfo.innerText = songs[songIndex].songName;
     // document.getElementById('play').addEventListener('keypress')
 })
+
+
+// volume button trying 
+
+volumeBar.addEventListener('change', () => {
+    audioElement.volume = volumeBar.value / 100;
+    volum = parseInt(audioElement.volume * 100)
+    volumeBar.value = volum;
+    console.log(volum);
+})
+
+// trying to mute
+document.getElementById('mbutton').addEventListener('click', () => {
+    volum = parseInt(audioElement.volume * 100)
+    if (volumeBar.value != 0) {
+        volumeBar.value = 0;
+        audioElement.volume = 0;
+        document.getElementById('mbutton').style.background = "red";
+    }else{
+        volumeBar.value = 30;
+        audioElement.volume = 0.3;
+        document.getElementById('mbutton').style.background = "white";
+    }
+
+}) 
+
+// forword button 
