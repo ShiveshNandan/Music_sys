@@ -7,6 +7,8 @@ let audioElement = new Audio('songs/0.mp3');
 let masterPlay = document.getElementById('masterPlay');
 let progreeBar = document.getElementById('progreeBar');
 let volumeBar = document.getElementById('volumeBar');
+let pp = document.getElementById('pp');
+let ps = document.getElementById('ps');
 let songItems = Array.from(document.getElementsByClassName("songItem"));
 let songInfo = document.getElementById("songinfo");
 let forword = document.getElementById("p10");
@@ -46,12 +48,16 @@ document.getElementById(`${songIndex}`).style.background = "yellow";
 masterPlay.addEventListener('click', () => {
     if (audioElement.paused || audioElement.currentTime <= 0) {
         audioElement.play();
-        masterPlay.style.background = "white";
+        // masterPlay.style.background = "white";
+        ps.style.display = "flex";
+        pp.style.display = "none";
         document.getElementById("chutiya").style.opacity = 1 ;
     }
     else {
         audioElement.pause();
-        masterPlay.style.background = "green";
+        // masterPlay.style.background = "green";
+        pp.style.display = "flex";
+        ps.style.display = "none";
         document.getElementById("chutiya").style.opacity = 0 ;
 
     }
@@ -65,12 +71,16 @@ document.addEventListener("keypress", function (event) {
 function auio(key) {
     if (key == " " && audioElement.paused) {
         audioElement.play();
-        masterPlay.style.background = "white";
+        // masterPlay.style.background = "white";
+        ps.style.display = "flex";
+        pp.style.display = "none";
         document.getElementById("chutiya").style.opacity = 1 ;
         
     } else if (key == " " && audioElement.played) {
         audioElement.pause();
-        masterPlay.style.background = "green";
+        // masterPlay.style.background = "green";
+        pp.style.display = "flex";
+        ps.style.display = "none";
         document.getElementById("chutiya").style.opacity = 0 ;
     }
     // console.log("i am clicked");
@@ -107,7 +117,9 @@ Array.from(document.getElementsByClassName('songItem')).forEach((element) => {
         audioElement.src = `songs/${songIndex}.mp3`;
         songInfo.innerText = songs[songIndex].songName;
         // audioElement.currentTime = 0;
-        masterPlay.style.background = "white";
+        // masterPlay.style.background = "white";
+        ps.style.display = "flex";
+        pp.style.display = "none";        
         document.getElementById("chutiya").style.opacity = 1 ;
         audioElement.play();
     })
@@ -119,7 +131,9 @@ function autoPlay() {
         songIndex += 1;
         progreeBar.value = 0;
         audioElement.src = `songs/${songIndex}.mp3`;
-        masterPlay.style.background = "white";
+        // masterPlay.style.background = "white";
+        ps.style.display = "flex";
+        pp.style.display = "none";
         audioElement.play();
         makeAll();
         songInfo.innerText = songs[songIndex].songName;
@@ -142,7 +156,9 @@ document.getElementById('prev').addEventListener('click', () => {
     console.log(songIndex);
     audioElement.src = `songs/${songIndex}.mp3`;
     // audioElement.currentTime = 0;
-    masterPlay.style.background = "white";
+    // masterPlay.style.background = "white";
+    ps.style.display = "flex";
+    pp.style.display = "none";
     audioElement.play();
     makeAll();
     songInfo.innerText = songs[songIndex].songName;
@@ -160,7 +176,9 @@ document.getElementById('next').addEventListener('click', () => {
     console.log(songIndex);
     audioElement.src = `songs/${songIndex}.mp3`;
     audioElement.currentTime = 0;
-    masterPlay.style.background = "white";
+    // masterPlay.style.background = "white";
+    ps.style.display = "flex";
+    pp.style.display = "none";
     audioElement.play();
     makeAll();
     document.getElementById(`${songIndex}`).style.background = "yellow";
@@ -225,7 +243,9 @@ function repeat() {
         // audioElement.play();
         progreeBar.value = 0;
         audioElement.src = `songs/${songIndex}.mp3`;
-        masterPlay.style.background = "white";
+        // masterPlay.style.background = "white";
+        ps.style.display = "flex";
+        pp.style.display = "none";
         audioElement.play();
         makeAll();
         songInfo.innerText = songs[songIndex].songName;

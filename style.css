@@ -94,11 +94,18 @@ nav ul li{
     border-radius: 5px;
 }
 .play{
-    background: green;
+    /* background: green; */
     height: 40px;
     width: 40px;
-    margin: 2px;
+    /* margin: 2px; */
     border-radius: 20px;
+}
+#ps, #pp{
+    height: 40px;
+    width: 40px;
+}
+#ps {
+    display: none;
 }
 
 #mbutton, #repeat{
