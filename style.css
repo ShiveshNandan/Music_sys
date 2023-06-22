@@ -87,11 +87,47 @@ nav ul li{
     flex-direction: row;
 }
 .prev, .next{
-    background: blue;
+    /* background: blue; */
     height: 25px;
     width: 25px;
     margin: 4px;
     border-radius: 5px;
+    cursor: pointer;
+}
+#nn, #pv{
+    /* background: blue; */
+    height: 25px;
+    width: 25px;
+    /* margin: 4px; */
+    border-radius: 5px;
+    filter: invert(0.75);
+}
+#mm, #vv{
+    /* background: blue; */
+    height: 20px;
+    width: 20px;
+    /* margin: 4px; */
+    border-radius: 5px;
+    /* filter: invert(0.75); */
+}
+#mm{
+    display: none;
+}
+#rr, #r1{
+    /* background: blue; */
+    /* display: none; */
+    display: inline;
+    position: fixed;
+    height: 20px;
+    width: 20px;
+    margin-top: 0px;
+    margin-left: -20px;
+    border-radius: 5px;
+    filter: invert(1);
+    /* z-index: 3; */
+}
+#r1{
+    display: none;
 }
 .play{
     /* background: green; */
@@ -99,10 +135,12 @@ nav ul li{
     width: 40px;
     /* margin: 2px; */
     border-radius: 20px;
+    cursor: pointer;
 }
 #ps, #pp{
     height: 40px;
     width: 40px;
+    filter: invert(0.75);
 }
 #ps {
     display: none;
@@ -111,16 +149,18 @@ nav ul li{
 #mbutton, #repeat{
     height: 20px;
     width: 20px;
-    background: white;
+    filter: invert(0.9);
+    /* background: white; */
 }
 
 #repeat {
     /* display: none; */
     opacity: 0;
+    /* z-index: 300; */
     /* height: 30px; */
 }
 #repeats{
-    background: blue;
+    /* background: blue; */
     height: 20px;
     width: 20px;
 }
@@ -183,12 +223,16 @@ nav ul li{
     display: flex;
     justify-content: space-between;
     padding: 0.3vw;
-    background: red;
+    background: #242323;
+    color: rgb(254, 254, 255);
     width: 20vw;
     margin: 0.5vw;
     border-radius: 10px;
 }
+.rdx{
+    background: #000;
 
+}
 .songinfo{
     display: flex;
     flex-direction: column;
@@ -215,8 +259,6 @@ nav ul li{
     opacity: 0;
     transition: all 0.4s ease-in-out;
 }
-
-
 .upper{
     display: flex;
 }
@@ -224,3 +266,80 @@ nav ul li{
 .mute{
     width: 20vw;
 }
+
+@media only screen and (max-width: 900px) {
+    nav{
+        display: none;
+    }
+    .maincon{
+        display: none;
+    }
+    .side{
+        width: 70vw;
+        margin: auto auto;
+        align-self: center;
+        height: 80vh;
+    }
+    .container{
+        width: 70vw;
+        height: 80vh;
+    }
+    .songBanner{
+        width: 60vw;
+        height: 70vh;
+    }
+    .songItem{
+        width: 50vw;
+    }
+    #chutiya{
+        display: none;
+    }
+    .songBanner::-webkit-scrollbar {
+        width: 0px;
+      }
+      .bm{
+        width: 300px;
+        padding: 20px;
+    }
+    .mute{
+       width: 200px;
+    }
+  }
+  
+@media only screen and (max-width: 680px) {
+    .bottom{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .side{
+        width: 100vw;
+    }
+
+    .container{
+        width: 90vw;
+        height: 70vh;
+    }
+    .songItem{
+        width: 70vw;
+    }
+    
+    .songBanner{
+        width: 80vw;
+    }
+    .songinfo{
+        width: 90vw;
+    }
+    #bb{
+        display: none;
+    }
+    .bm{
+        width: 80vw;
+    }
+    .mute{
+       width: 50vw;
+       display: flex;
+       justify-content: space-around;
+       padding: 20px;
+    }
+  }
+  

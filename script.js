@@ -1,5 +1,5 @@
 console.log("Welcome to music player");
-
+// document.getElementById("repeat").style.zIndex = "10";
 
 //++++++++++++++++++++++++++++++++++++++= initiallising the variables ++++++++++++++++++++++++++++++++++++++++++++++++++ 
 let songIndex = 0;
@@ -9,6 +9,12 @@ let progreeBar = document.getElementById('progreeBar');
 let volumeBar = document.getElementById('volumeBar');
 let pp = document.getElementById('pp');
 let ps = document.getElementById('ps');
+let nn = document.getElementById('nn');
+let pv = document.getElementById('pv');
+let vv = document.getElementById('vv');
+let mm = document.getElementById('mm');
+let rr = document.getElementById('rr');
+let r1 = document.getElementById('r1');
 let songItems = Array.from(document.getElementsByClassName("songItem"));
 let songInfo = document.getElementById("songinfo");
 let forword = document.getElementById("p10");
@@ -16,21 +22,21 @@ let back = document.getElementById("m10");
 console.log(songIndex);
 
 let songs = [
-    { songName: "01. Gandi Baat", filePath: "songs/0.mp3", coverPath: "covers/1.jpg" },
-    { songName: "01. Laree Choote - Xulfi", filePath: "songs/1.mp3", coverPath: "covers/1.jpg" },
-    { songName: "01. Saibo (1)", filePath: "songs/2.mp3", coverPath: "covers/1.jpg" },
-    { songName: "har maidan", filePath: "songs/3.mp3", coverPath: "covers/1.jpg" },
-    { songName: "1", filePath: "songs/4.mp3", coverPath: "covers/1.jpg" },
-    { songName: "tune jo na kaha", filePath: "songs/5.mp3", coverPath: "covers/1.jpg" },
-    { songName: "5 taara", filePath: "songs/6.mp3", coverPath: "covers/1.jpg" },
-    { songName: "bewafa", filePath: "songs/7.mp3", coverPath: "covers/1.jpg" },
-    { songName: "alone", filePath: "songs/8.mp3", coverPath: "covers/1.jpg" },
-    { songName: "bose dk", filePath: "songs/9.mp3", coverPath: "covers/1.jpg" }
+    { songName: "01. Gandi Baat", filePath: "songs/0.mp3" },
+    { songName: "01. Laree Choote - Xulfi", filePath: "songs/1.mp3" },
+    { songName: "01. Saibo (1)", filePath: "songs/2.mp3" },
+    { songName: "har maidan", filePath: "songs/3.mp3" },
+    { songName: "1", filePath: "songs/4.mp3" },
+    { songName: "tune jo na kaha", filePath: "songs/5.mp3" },
+    { songName: "5 taara", filePath: "songs/6.mp3" },
+    { songName: "bewafa", filePath: "songs/7.mp3" },
+    { songName: "alone", filePath: "songs/8.mp3" },
+    { songName: "bose dk", filePath: "songs/9.mp3" }
 ]
 
 songItems.forEach((element, i) => {
-    // console.log(element, i);
-    element.getElementsByTagName("img")[0].src = songs[i].coverPath;
+    console.log( i);
+    // element.getElementsByTagName("img")[0].src = songs[i].coverPath;
     element.getElementsByClassName("songName")[0].innerText = songs[i].songName;
     //     for (let k = 0; k < songs.length; k++) {
     //         audioElement = new Audio(`songs/${k}.mp3`);
@@ -44,21 +50,21 @@ songItems.forEach((element, i) => {
 //++++++++++++++++++++++++++++++++++++++++++ handle the play and pause button +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 songInfo.innerText = songs[songIndex].songName;
-document.getElementById(`${songIndex}`).style.background = "yellow";
+document.getElementById(`${songIndex}`).style.background = "rgb(51, 49, 49)";
 masterPlay.addEventListener('click', () => {
     if (audioElement.paused || audioElement.currentTime <= 0) {
         audioElement.play();
         // masterPlay.style.background = "white";
         ps.style.display = "flex";
         pp.style.display = "none";
-        document.getElementById("chutiya").style.opacity = 1 ;
+        document.getElementById("chutiya").style.opacity = 1;
     }
     else {
         audioElement.pause();
         // masterPlay.style.background = "green";
         pp.style.display = "flex";
         ps.style.display = "none";
-        document.getElementById("chutiya").style.opacity = 0 ;
+        document.getElementById("chutiya").style.opacity = 0;
 
     }
     autoPlay();
@@ -74,14 +80,14 @@ function auio(key) {
         // masterPlay.style.background = "white";
         ps.style.display = "flex";
         pp.style.display = "none";
-        document.getElementById("chutiya").style.opacity = 1 ;
-        
+        document.getElementById("chutiya").style.opacity = 1;
+
     } else if (key == " " && audioElement.played) {
         audioElement.pause();
         // masterPlay.style.background = "green";
         pp.style.display = "flex";
         ps.style.display = "none";
-        document.getElementById("chutiya").style.opacity = 0 ;
+        document.getElementById("chutiya").style.opacity = 0;
     }
     // console.log("i am clicked");
 }
@@ -104,7 +110,7 @@ progreeBar.addEventListener('change', () => {
 
 const makeAll = () => {
     Array.from(document.getElementsByClassName('songItem')).forEach((element) => {
-        element.style.background = "red";
+        element.style.background = "#242323";
         // element.target.style.background = "red";
     })
 }
@@ -113,14 +119,14 @@ Array.from(document.getElementsByClassName('songItem')).forEach((element) => {
         makeAll();
         songIndex = parseInt(e.target.id);
         console.log(songIndex);
-        e.target.style.background = "yellow";
+        e.target.style.background = "rgb(51, 49, 49)";
         audioElement.src = `songs/${songIndex}.mp3`;
         songInfo.innerText = songs[songIndex].songName;
         // audioElement.currentTime = 0;
         // masterPlay.style.background = "white";
         ps.style.display = "flex";
-        pp.style.display = "none";        
-        document.getElementById("chutiya").style.opacity = 1 ;
+        pp.style.display = "none";
+        document.getElementById("chutiya").style.opacity = 1;
         audioElement.play();
     })
 })
@@ -137,8 +143,8 @@ function autoPlay() {
         audioElement.play();
         makeAll();
         songInfo.innerText = songs[songIndex].songName;
-        document.getElementById(`${songIndex}`).style.background = "yellow";
-        document.getElementById("chutiya").style.opacity = 1 ;
+        document.getElementById(`${songIndex}`).style.background = "rgb(51, 49, 49)";
+        document.getElementById("chutiya").style.opacity = 1;
     }
 }
 setInterval(() => {
@@ -162,8 +168,8 @@ document.getElementById('prev').addEventListener('click', () => {
     audioElement.play();
     makeAll();
     songInfo.innerText = songs[songIndex].songName;
-    document.getElementById(`${songIndex}`).style.background = "yellow";
-    document.getElementById("chutiya").style.opacity = 1 ;
+    document.getElementById(`${songIndex}`).style.background = "rgb(51, 49, 49)";
+    document.getElementById("chutiya").style.opacity = 1;
 })
 
 document.getElementById('next').addEventListener('click', () => {
@@ -181,10 +187,10 @@ document.getElementById('next').addEventListener('click', () => {
     pp.style.display = "none";
     audioElement.play();
     makeAll();
-    document.getElementById(`${songIndex}`).style.background = "yellow";
+    document.getElementById(`${songIndex}`).style.background = "rgb(51, 49, 49)";
     // songInfo.innerText = (`${songIndex}`);
     songInfo.innerText = songs[songIndex].songName;
-    document.getElementById("chutiya").style.opacity = 1 ;
+    document.getElementById("chutiya").style.opacity = 1;
     // document.getElementById('play').addEventListener('keypress')
 })
 
@@ -214,11 +220,15 @@ document.getElementById('mbutton').addEventListener('click', () => {
     if (volumeBar.value != 0) {
         volumeBar.value = 0;
         audioElement.volume = 0;
-        document.getElementById('mbutton').style.background = "red";
+        // document.getElementById('mbutton').style.background = "red";
+        mm.style.display = "flex";
+        vv.style.display = "none";
     } else {
         volumeBar.value = 30;
         audioElement.volume = 0.3;
-        document.getElementById('mbutton').style.background = "white";
+        // document.getElementById('mbutton').style.background = "white";
+        vv.style.display = "flex";
+        mm.style.display = "none";
     }
 
 })
@@ -249,7 +259,7 @@ function repeat() {
         audioElement.play();
         makeAll();
         songInfo.innerText = songs[songIndex].songName;
-        document.getElementById(`${songIndex}`).style.background = "yellow";
+        document.getElementById(`${songIndex}`).style.background = "rgb(51, 49, 49)";
         console.log("hello");
     }
     // if(document.getElementById('repeat').checked == false){
@@ -257,27 +267,60 @@ function repeat() {
     // }  
     // }, 1);
 }
-
-document.getElementById("repeat").addEventListener('click', () => {
-
+rr.addEventListener("click", () => {
+    document.getElementById('repeat').checked = true;
+    rr.style.display = "none";
+    r1.style.display = "inline";
+    r1.style.position = "fixed";
+    console.log(document.getElementById('repeat').checked);
     if (document.getElementById('repeat').checked == true) {
         const dude = setInterval(() => {
-            document.getElementById("repeats").style.background = "pink";
+            // document.getElementById("repeats").style.background = "pink";
             repeat();
             if (document.getElementById('repeat').checked == false) {
-                document.getElementById("repeats").style.background = "blue";
+                // document.getElementById("repeats").style.background = "blue";
                 clearInterval(dude);
             }
         }, 1);
     }
-    // else if(document.getElementById('repeat').checked == false){
-    //     clearInterval(dude);
-    // }  
-    // else if (document.getElementById('repeat').checked == false){
-    //     // clearTimeout(() => {
-    //     //     console.log("off");
-    //     //     repeat();
-    //     // }, 1);
-    //     clearTimeout(repeat());
-    // }
 })
+r1.addEventListener("click", () => {
+    document.getElementById('repeat').checked = false;
+    r1.style.display = "none";
+    rr.style.display = "inline";
+    rr.style.position = "fixed";
+    console.log(document.getElementById('repeat').checked);
+    if (document.getElementById('repeat').checked == true) {
+        const dude = setInterval(() => {
+            // document.getElementById("repeats").style.background = "pink";
+            repeat();
+            if (document.getElementById('repeat').checked == false) {
+                // document.getElementById("repeats").style.background = "blue";
+                clearInterval(dude);
+            }
+        }, 1);
+    }
+})
+// document.getElementById("repeat").addEventListener('mouseover', () => {
+
+//     if (document.getElementById('repeat').checked == true) {
+//         const dude = setInterval(() => {
+//             document.getElementById("repeats").style.background = "pink";
+//             repeat();
+//             if (document.getElementById('repeat').checked == false) {
+//                 document.getElementById("repeats").style.background = "blue";
+//                 clearInterval(dude);
+//             }
+//         }, 1);
+//     }
+//     // else if(document.getElementById('repeat').checked == false){
+//     //     clearInterval(dude);
+//     // }  
+//     // else if (document.getElementById('repeat').checked == false){
+//     //     // clearTimeout(() => {
+//     //     //     console.log("off");
+//     //     //     repeat();
+//     //     // }, 1);
+//     //     clearTimeout(repeat());
+//     // }
+// })

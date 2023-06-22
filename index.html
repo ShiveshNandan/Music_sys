@@ -26,54 +26,56 @@
                 </div>
                 <div class="songBanner">
                     <div class="songItem" id="0">
-                        <img src="cover1.jpg" alt="1">
+                    
+                        <!-- <img src="cover1.jpg" alt="1"> -->
                         <span class="songName">Let me love you</span>
-                        <span class="songlistplay"><span class="timestamp">05:34</span></span>
+                        <!-- <span class="songlistplay"><span class="timestamp">05:34</span></span> -->
                     </div>
+                    
                     <div class="songItem" id="1">
-                        <img src="cover1.jpg" alt="1">
+                        <!-- <img src="cover1.jpg" alt="1"> -->
                         <span class="songName">Let me love you</span>
-                        <span class="songlistplay"><span class="timestamp">05:34</span></span>
+                        <!-- <span class="songlistplay"><span class="timestamp">05:34</span></span> -->
                     </div>
                     <div class="songItem" id="2">
-                        <img src="cover1.jpg" alt="1">
+                        <!-- <img src="cover1.jpg" alt="1"> -->
                         <span class="songName">Let me love you</span>
-                        <span class="songlistplay"><span class="timestamp">05:34</span></span>
+                        <!-- <span class="songlistplay"><span class="timestamp">05:34</span></span> -->
                     </div>
                     <div class="songItem" id="3">
-                        <img src="cover1.jpg" alt="1">
+                        <!-- <img src="cover1.jpg" alt="1"> -->
                         <span class="songName">Let me love you</span>
-                        <span class="songlistplay"><span class="timestamp">05:34</span></span>
+                        <!-- <span class="songlistplay"><span class="timestamp">05:34</span></span> -->
                     </div>
                     <div class="songItem" id="4">
-                        <img src="cover1.jpg" alt="1">
+                        <!-- <img src="cover1.jpg" alt="1"> -->
                         <span class="songName">Let me love you</span>
-                        <span class="songlistplay"><span class="timestamp">05:34</span></span>
+                        <!-- <span class="songlistplay"><span class="timestamp">05:34</span></span> -->
                     </div>
                     <div class="songItem" id="5">
-                        <img src="cover1.jpg" alt="1">
+                        <!-- <img src="cover1.jpg" alt="1"> -->
                         <span class="songName">Let me love you</span>
-                        <span class="songlistplay"><span class="timestamp">05:34</span></span>
+                        <!-- <span class="songlistplay"><span class="timestamp">05:34</span></span> -->
                     </div>
                     <div class="songItem" id="6">
-                        <img src="cover1.jpg" alt="1">
+                        <!-- <img src="cover1.jpg" alt="1"> -->
                         <span class="songName">Let me love you</span>
-                        <span class="songlistplay"><span class="timestamp">05:34</span></span>
+                        <!-- <span class="songlistplay"><span class="timestamp">05:34</span></span> -->
                     </div>
                     <div class="songItem" id="7">
-                        <img src="cover1.jpg" alt="1">
+                        <!-- <img src="cover1.jpg" alt="1"> -->
                         <span class="songName">Let me love you</span>
-                        <span class="songlistplay"><span class="timestamp">05:34</span></span>
+                        <!-- <span class="songlistplay"><span class="timestamp">05:34</span></span> -->
                     </div>
                     <div class="songItem" id="8">
-                        <img src="cover1.jpg" alt="1">
+                        <!-- <img src="cover1.jpg" alt="1"> -->
                         <span class="songName">Let me love you</span>
-                        <span class="songlistplay"><span class="timestamp">05:34</span></span>
+                        <!-- <span class="songlistplay"><span class="timestamp">05:34</span></span> -->
                     </div>
                     <div class="songItem" id="9">
-                        <img src="cover1.jpg" alt="1">
+                        <!-- <img src="cover1.jpg" alt="1"> -->
                         <span class="songName">Let me love you</span>
-                        <span class="songlistplay"><span class="timestamp">05:34</span></span>
+                        <!-- <span class="songlistplay"><span class="timestamp">05:34</span></span> -->
                     </div>
                 </div>
             </div>
@@ -82,18 +84,24 @@
     </div>
     <div class="bottom">
         <div class="mute">
-            <div id="mbutton"></div>
+            <div id="mbutton"><img src="images/volume.png" alt="" id="vv"><img src="images/mute.png" alt="" id="mm">
+            </div>
             <input type="range" id="volumeBar" min="0" value="100" max="100">
             <div id="repeats">
-                <input type="checkbox" id="repeat"></input>
+                <input type="checkbox" id="repeat">
+
+                <img src="images/repeat.png" alt="" id="rr">
+                <img src="images/repeat1.png" alt="" id="r1">
+                </input>
             </div>
         </div>
         <div class="bm">
             <div class="control">
                 <div class="prev" id="m10">-10</div>
-                <div class="prev" id="prev"></div>
-                <div class="play" id="masterPlay"><img src="images/pause.png" alt="" id="ps"><img src="images/play.png" alt="" id="pp"></div>
-                <div class="next" id="next"></div>
+                <div class="prev" id="prev"><img src="images/previous.png" alt="" id="pv"></div>
+                <div class="play" id="masterPlay"><img src="images/pause.png" alt="" id="ps"><img src="images/play.png"
+                        alt="" id="pp"></div>
+                <div class="next" id="next"><img src="images/next.png" alt="" id="nn"></div>
                 <div class="next" id="p10">+10</div>
             </div>
             <input type="range" name="range" id="progreeBar" min="0" value="0" max="100000000">
@@ -101,9 +109,9 @@
         <div class="newb">
             <div class="songinfo" id="songinfo">
             </div>
-            <a href="https://visitcount.itsvg.in">
+            <a id="bb" href="https://visitcount.itsvg.in">
                 <img src="https://visitcount.itsvg.in/api?id=music&label=views&pretty=false" />
-              </a>
+            </a>
         </div>
     </div>
     <script src="script.js"></script>
