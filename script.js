@@ -22,16 +22,16 @@ let back = document.getElementById("m10");
 console.log(songIndex);
 
 let songs = [
-    { songName: "01. Gandi Baat", filePath: "songs/0.mp3" },
-    { songName: "01. Laree Choote - Xulfi", filePath: "songs/1.mp3" },
-    { songName: "01. Saibo (1)", filePath: "songs/2.mp3" },
-    { songName: "har maidan", filePath: "songs/3.mp3" },
-    { songName: "1", filePath: "songs/4.mp3" },
-    { songName: "tune jo na kaha", filePath: "songs/5.mp3" },
+    { songName: "Born To Shine", filePath: "songs/0.mp3" },
+    { songName: "BYE - Aditya", filePath: "songs/1.mp3" },
+    { songName: "Fark Nahi Padta", filePath: "songs/2.mp3" },
+    { songName: "Lemonade", filePath: "songs/3.mp3" },
+    { songName: "Nasha X Old Town Road", filePath: "songs/4.mp3" },
+    { songName: "Obsessed", filePath: "songs/5.mp3" },
     { songName: "5 taara", filePath: "songs/6.mp3" },
-    { songName: "bewafa", filePath: "songs/7.mp3" },
-    { songName: "alone", filePath: "songs/8.mp3" },
-    { songName: "bose dk", filePath: "songs/9.mp3" }
+    { songName: "Paisa Hai Toh", filePath: "songs/7.mp3" },
+    { songName: "SHARN X BOHEMIA Mi Amor", filePath: "songs/8.mp3" },
+    { songName: "Bose DK", filePath: "songs/9.mp3" }
 ]
 
 songItems.forEach((element, i) => {
